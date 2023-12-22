@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                text-align: center;
+                margin-top: 200px;
+                font-size: 30px;
+            }
+            #btn {
+                padding: 15px 30px;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <!-- <body>
+        <h1 id="colorChange">Change my Color</h1>
+        <button id="btn">Click Me</button>
+
+        <script>
+            (function () {
+                let btn = document.getElementById("btn");
+                let firstRandom = Math.floor(Math.random() * 100) + 2;
+                btn.addEventListener("click", function () {
+                    let changeColor = document.getElementById("colorChange");
+
+                    let secondRandom = `rgb ${changeTextColor(
+                        250
+                    )},${changeTextColor(250)},${changeTextColor(250)},`;
+                    changeColor.style.color = secondRandom;
+                });
+            })();
+
+            // btn.addEventListener("click", function () {
+            //     let secondRandom = `color ${changeTextColor(
+            //         250
+            //     )},${changeTextColor(250)},${changeTextColor(250)},`;
+            // });
+        </script>
+    </body> -->
+
+    <body>
+        <h1 id="colorChange">Change my Color</h1>
+        <button id="btn">Click Me</button>
+
+        <script>
+            function changeTextColor() {
+                return Math.floor(Math.random() * 100);
+            }
+
+            (function () {
+                let btn = document.getElementById("btn");
+                btn.addEventListener("click", function () {
+                    let changeColor = document.getElementById("colorChange");
+
+                    let secondRandom = `rgb(${changeTextColor(
+                        250
+                    )},${changeTextColor(250)},${changeTextColor(250)})`;
+                    changeColor.style.color = secondRandom;
+                });
+            })();
+        </script>
+    </body>
+</html>

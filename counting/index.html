@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>count</title>
+    </head>
+    <style>
+        body {
+            display: block;
+            text-align: center;
+            align-items: center;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        button {
+            width: 100px;
+            align-items: center;
+            margin: auto;
+            padding: 20px 10px;
+            font-size: 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            outline: none;
+            width: 140px;
+        }
+    </style>
+    <body>
+        <h1>
+            Incrementor and Decrementor <br />
+            App
+        </h1>
+        <p style="color: chartreuse" id="countingNumber">0</p>
+
+        <button id="button_1">CountDown</button>
+        <button id="button_2">Reset</button>
+        <button id="button_3">CountUP</button>
+
+        <script>
+            let countTip = document.getElementById("countingNumber");
+            let BUTTON_3 = document.getElementById("button_3");
+            let BUTTON_1 = document.getElementById("button_1");
+            let BUTTON_2 = document.getElementById("button_2");
+
+            //random varial declared for comparasion
+            let ATTACK_VALUE = "Hey the number is less than 0";
+
+            function countingUp() {
+                let currentCount = parseInt(countTip.innerText);
+                let newCount_1 = currentCount + 1;
+                countTip.innerText = newCount_1;
+            }
+            function countingDown() {
+                let currentCount = parseInt(countTip.innerText);
+                let newCount_2 = currentCount - 1;
+                countTip.innerText = newCount_2;
+                if (newCount_2 <= 0) {
+                    for (var i = 0; i < newCount_2; i++) {
+                        console.log(newCount_2[i]);
+                    }
+
+                    // newCount_2 = ATTACK_VALUE.innerText;
+                }
+            }
+
+            function resetFunctionality(demo) {
+                let monster = 0;
+                let currentDemo = parseInt(countTip.innerText);
+                currentDemo = monster;
+                countTip.innerText = currentDemo;
+            }
+
+            BUTTON_2.addEventListener("click", resetFunctionality);
+            BUTTON_3.addEventListener("click", countingUp);
+            BUTTON_1.addEventListener("click", countingDown);
+        </script>
+    </body>
+</html>
